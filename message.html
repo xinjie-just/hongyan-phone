@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给我们留言 | 红焱科技</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="keywords" content="红焱科技,综合性金融支付解决方案">
+    <meta name="description" content="红焱科技,综合性金融支付解决方案">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/hongyan.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_o9nt9lnz9pv6lxr.css">
+</head>
+<body>
+    <header id="header">
+        <figure class="logo">
+            <a href="#" title="去首页">
+                <img src="images/logo.png" alt="红焱科技logo">
+            </a>
+        </figure>
+        <nav id="nav">
+            <ul>
+                <!--当前页面给 a 添加 active 类-->
+                <li>
+                    <a href="#" title="首页">首页</a>
+                </li>
+                <li>
+                    <a href="#" title="新闻动态">新闻动态</a>
+                </li>
+                <li>
+                    <a href="#" title="产品展示">产品展示</a>
+                </li>
+                <li>
+                    <a href="#" title="支付平台">支付平台</a>
+                </li>
+                <li>
+                    <a href="#" title="招商联盟">招商联盟</a>
+                </li>
+                <li>
+                    <a href="#" title="联系我们" class="active">联系我们</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="banner message-banner">
+            <img src="images/contact-banner.png" alt="联系我们banner">
+        </div>
+        <div class="content-wrapper">
+            <nav class="sidebar-left">
+                <h1>联系我们</h1>
+                <ul>
+                    <li>
+                        <a href="#" title="联系我们">联系我们</a>
+                    </li>
+                    <li>
+                        <a href="#" title="给我们留言" class="active">给我们留言</a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="sidebar-right">
+                <nav class="breadcrumbs">
+                    <ol>
+                        <li>
+                            <a href="#" title="首页" class="iconfont icon-home"></a>
+                        </li>
+                        <li>
+                            <a href="#" title="联系我们">联系我们</a>
+                        </li>
+                        <li>给我们留言</li>
+                    </ol>
+                </nav>
+                <h2>给我们留言</h2>
+                <p>请提出您的宝贵意见和建议，我们会更好地提高，谢谢。</p>
+                <form action="" method="post" id="messageForm" class="message-form contact-form">
+                    <div class="name">
+                        <label for="name" class="required">姓名：</label>
+                        <input type="text" id="name" name="name" required placeholder="请输入姓名">
+                    </div>
+                    <div class="phone">
+                        <label for="phone">联系方式：</label>
+                        <input type="text" id="phone" name="phone" placeholder="请输入手机号码">
+                    </div>
+                    <div class="email">
+                        <label for="email">联系邮箱：</label>
+                        <input type="text" id="email" name="email" placeholder="请输入联系邮箱">
+                    </div>
+                    <div class="advise">
+                        <label for="advise" class="required">意见建议：</label>
+                        <textarea id="advise" name="advise" required placeholder="限制300个字"></textarea>
+                    </div>
+                    <div class="submit">
+                        <button type="submit" id="messageSubmit" class="message-submit" title="提交">提交</button>
+                    </div>
+                </form>
+            </aside>
+        </div>
+    </main>
+    <footer id="footer">
+        <small>Copyright &copy; 2010-2017  红焱科技支付有限公司版权所有</small>
+        <div class="others">
+            <a href="#" title="给我们发QQ消息" class="qq">
+                <i class="iconfont icon-qq"></i>
+            </a>
+            <a href="#" title="返回顶部" id="toTop" class="totop">
+                <i class="iconfont icon-totop"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/to-top.js"></script>
+</body>
+</html>
