@@ -1,13 +1,5 @@
 @charset "UTF-8";
 @import "variables";
-/* 让 IE 浏览器对不识别的 html5 元素将其当做块元素处理*/
-
-details,
-main,
-summary {
-  display: block;
-}
-
 //设置所有浏览器中外边距不为零的元素的外边距为零
 body,
 h1,
@@ -60,6 +52,7 @@ fieldset {
 
 //在 IE浏览器 和 iOS 设备的浏览器中阻止调整字体的尺寸
 html {
+  font-size: 100px;
   height: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -77,13 +70,13 @@ html {
 // 页面最大宽
 %page-width {
   width: 100%;
-  max-width: 1920px;
+  max-width: 540px;
   margin-right: auto;
   margin-left: auto;
 }
 body {
   @extend %page-width;
-  font-size: $font-size;
+  font-size: 1rem;
   color: $text-color;
   background-color: #fff;
   font-family: "Microsoft Yahei", Arial, sans-serif;
@@ -427,11 +420,16 @@ label {
   white-space: nowrap;
 }
 
-%transition {
-  transition: all .4s ease .1s;
+@mixin line-clamp($line-number: 2) {
+  /*多行文本省略*/
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line-number;
 }
-
-@mixin center-content($width: 1200px) {
+@mixin center-content($width: 96%) {
   display: block;
   width: $width;
   margin-right: auto;
