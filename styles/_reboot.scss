@@ -74,9 +74,10 @@ html {
   margin-right: auto;
   margin-left: auto;
 }
+
 body {
   @extend %page-width;
-  font-size: 1rem;
+  font-size: .12rem;
   color: $text-color;
   background-color: #fff;
   font-family: "Microsoft Yahei", Arial, sans-serif;
@@ -429,7 +430,7 @@ label {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $line-number;
 }
-@mixin center-content($width: 96%) {
+@mixin center-content($width: 92%) {
   display: block;
   width: $width;
   margin-right: auto;
