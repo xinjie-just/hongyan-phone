@@ -13,54 +13,45 @@
   z-index: 1;
   .heading {
     h1 {
+      @extend %ellipsis;
+      z-index: 2;
+      position: absolute;
+      width: 100%;
       height: $height;
       line-height: $height;
+      padding-left: $height * 2;
+      padding-right: $height * 2;
       font-size: .24rem;
       color: $main-color;
       text-align: center;
     }
-    .menu-icon {
+    #back {
+      z-index: 3;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $height * 2;
+      height: $height;
+      line-height: $height;
+      text-align: center;
+      color: #666;
+      font-size: .14rem;
+      i {
+        margin-right: .04rem;
+      }
+    }
+    #menu {
       z-index: 3;
       position: absolute;
       top: 0;
       right: 0;
       width: $height;
       height: $height;
-      .show {
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(-50%, -50%);
-        $size: $height / 10;
+      line-height: $height;
+      text-align: center;
+      i {
         color: #666;
-        width: $size * 5;
-        height: $size * 5;
-        box-sizing: border-box;
-        border-top: $size solid;
-        border-bottom: $size solid;
-        padding-top: $size;
-        padding-bottom: $size;
-        background-color: currentColor;
-        background-clip: content-box;
-      }
-      .hide {
-        position: relative;
-        width: $height * 4 / 5;
-        height: .03rem;
-        color: #666;
-        background-color: currentColor;
-        transform: rotate(45deg);
-        border-radius: .015rem;
-        &:after {
-          content: "";
-          position: absolute;
-          width: $height * 4 / 5;
-          height: .03rem;
-          color: #666;
-          background-color: currentColor;
-          transform: rotate(90deg);
-          border-radius: .015rem;
-        }
+        font-size: .2rem;
       }
     }
   }
@@ -195,6 +186,7 @@ section.about-us {
         color: $text-color;
         line-height: 1.8;
         margin-bottom: .1rem;
+        word-wrap: break-word;
         &:last-of-type {
           margin-bottom: 0;
         }
@@ -566,15 +558,15 @@ section.news {
 .others {
   z-index: 9999;
   position: fixed;
-  right: 60px;
-  bottom: 250px;
+  right: .4rem;
+  bottom: 2rem;
   > a {
     position: absolute;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: .3rem;
+    height: .3rem;
     text-align: center;
-    line-height: 40px;
+    line-height: .3rem;
     border-radius: 50%;
     &.qq {
       top: 0;
@@ -582,17 +574,14 @@ section.news {
       background-color: #18acfc;
     }
     &.totop {
-      top: 44px;
+      top: .34rem;
       left: 0;
       display: none;
       background-color: #1b95df;
     }
     i {
-      font-size: 24px;
+      font-size: .18rem;
       color: #fff;
-      &:hover {
-        color: darken(#fff, 9%);
-      }
     }
   }
 }
@@ -608,226 +597,162 @@ section.news {
     margin-left: auto;
   }
 }
-.content-wrapper {
-  @extend %clearfix;
-  @include center-content(1200px);
-  margin-top: 40px;
-  margin-bottom: 30px;
-  .sidebar-left {
-    @extend %fl;
-    width: 220px;
-  }
-  .sidebar-right {
-    @extend %fr;
-    width: 900px;
-    > p {
-      font-size: $font-size - 2;
-      color: $text-color;
-      margin-bottom: 20px;
-    }
-  }
-}
-.sidebar-left {
-  $pl: 40px;
-  h1 {
-    $size: 58px;
-    width: 220px;
-    height: $size + 4;
-    line-height: $size;
-    padding-left: $pl;
-    font-size: $font-size + 4;
-    color: #fff;
-    background-color: #ff8000; /*IE9*/
-    background-image: linear-gradient(-214deg, #ff8000 2%, #ff6a00 99%);
-    border-bottom: 4px solid #d4d4d4;
-  }
-  ul {
-    li {
-      a {
-        $size: 56px;
-        position: relative;
-        display: block;
-        width: 100%;
-        height: $size + 1;
-        line-height: $size;
-        border-bottom: 1px solid #d6d6d6;
-        color: $text-color;
-        padding-left: $pl;
-        &.active,
-        &:hover{
-          color: $main-color;
-        }
-        &:before {
-          content: ">";
-          position: absolute;
-          top: 50%;
-          left: 16px;
-          font-size: 12px;
-          transform: translateY(-50%);
-        }
+
+.news-classify {
+  $height: .48rem;
+  @extend %page-width;
+  height: $height;
+  line-height: $height;
+  box-shadow: inset 0 -1px 0 0 rgba(203, 203, 203, .5);
+  margin-bottom: .1rem;
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -webkit-align-items: center;
+  -webkit-justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-around;
+  li {
+    flex: 1;
+    text-align: center;
+    a {
+      display: inline-block;
+      height: $height;
+      line-height: $height - .02rem;
+      text-align: center;
+      border-bottom: .02rem solid transparent;
+      color: #666;
+      font-size: .14rem;
+      &.active{
+        color: $main-color;
+        border-bottom-color: $main-color;
       }
     }
   }
 }
-/*新闻列表*/
-.sidebar-right {
-  h2 {
-    font-size: $font-size + 14;
-    color: $text-color;
-    margin-bottom: 10px;
-  }
-  .news-list {
-    li {
-      padding-top: 17px;
-      padding-bottom: 17px;
-      border-bottom: 1px dotted #999;
-      .heading {
+.news-list {
+  @include center-content();
+  margin-bottom: .7rem;
+  li {
+    padding: .1rem;
+    border-bottom: 1px dotted #999;
+    &:last-of-type {
+      border-bottom-width: 0;
+    }
+    a {
+      display: block;
+      h3 {
         position: relative;
         width: 100%;
-        height: 38px;
-        line-height: 38px;
-        padding-left: 14px;
-        font-size: 0;
+        height: .18rem;
+        line-height: .18rem;
+        margin-bottom: .06rem;
+        font-size: .14rem;
+        color: $text-color;
         &:before {
           content: "";
           position: absolute;
           top: 50%;
-          left: 0;
+          left: -.1rem;
           transform: translateY(-50%);
-          width: 4px;
-          height: 4px;
+          width: .04rem;
+          height: .04rem;
           background-color: #28aaf8;
         }
-        a {
-          display: inline-block;
-          vertical-align: middle;
-          max-width: calc(100% - 100px - 14px);
-          font-size: $font-size;
-          color: $text-color;
-          padding-right: 20px;
-          @extend %ellipsis;
-          &:hover {
-            color: $main-color;
-          }
-        }
-        time {
-          display: inline-block;
-          vertical-align: middle;
-          width: 100px;
-          font-size: $font-size;
-          color: #666;
-        }
+      }
+      time {
+        display: block;
+        font-size: .14rem;
+        color: #666;
+        margin-bottom: .08rem;
       }
       p {
-        font-size: $font-size - 2;
-        line-height: 26px;
-        max-height: 52px;
-        overflow: hidden;
+        @include line-clamp();
+        font-size: .12rem;
+        color: #999;
+        line-height: 1.4;
       }
-    }
-  }
-}
-/*分页*/
-.pagination-wrapper {
-  text-align: center;
-  margin-top: 30px;
-}
-.pagination {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  > li {
-    > a,
-    > span {
-        color: $text-color;
-        border-color: #d4d4d4;
-        background-color: #fff;
-        &:focus,
-        &:hover {
-          color: #fff;
-          border-color: $main-color;
-          background-color: $main-color;
-        }
-    }
-  }
-  > .active {
-    > a,
-    > a:focus,
-    > a:hover,
-    > span,
-    > span:focus,
-    > span:hover {
-      color: #fff;
-      border-color: $main-color;
-      background-color: $main-color;
     }
   }
 }
 
+#fixed-footer {
+  position: fixed;
+  bottom: 0;
+  @extend %page-width;
+  padding-top: .15rem;
+  padding-bottom: .15rem;
+  background-color: #999;
+  small {
+    @include center-content();
+    text-align: center;
+    font-size: .12rem;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+}
+
 /*===新闻详情===*/
-.sidebar-right {
-  article {
-    margin-top: 20px;
-    .heading {
-      $size: 36px;
-      @extend %clearfix;
+article {
+  margin-bottom: .7rem;
+  .heading {
+    $size: .36rem;
+    h3 {
+      width: 100%;
       height: $size;
       line-height: $size;
       padding-right: 20px;
       padding-left: 20px;
       background-color: #e8faff;
-      h3 {
-        @extend %fl;
-        width: calc(100% - 100px);
-        line-height: $size;
-        font-size: $font-size;
-        color: $text-color;
-        @extend %ellipsis;
-      }
-      time {
-        @extend %fr;
-        width: 100px;
-        font-size: $font-size;
-        color: #666;
+      margin-bottom: .1rem;
+    }
+    time {
+      @include center-content();
+      display: block;
+      font-size: .14rem;
+      color: #666;
+    }
+  }
+  .article-content {
+    @include center-content();
+    font-size: .14rem;
+    color: $text-color;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: .15rem auto 0;
+    }
+    img + img {
+      margin-top: .08rem;
+    }
+    p,
+    div {
+      line-height: .26rem;
+      word-wrap: break-word;
+      margin-top: .1rem;
+    }
+    img {
+      & + p,
+      & + div {
+        margin-top: .1rem;
       }
     }
-    .article-content {
-      padding-top: 10px;
-      font-size: $font-size - 2;
-      color: $text-color;
-      img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-        margin: 15px auto 0;
+    div {
+      > p,
+      > div {
+        margin-top: .05rem;
       }
-      img + img {
-        margin-top: 8px;
-      }
-      p,
-      div {
-        line-height: 26px;
-        word-wrap: break-word;
-        margin-top: 10px;
-      }
-      img {
-        & + p,
-        & + div {
-          margin-top: 10px;
-        }
-      }
-      div {
-        > p,
-        > div {
-          margin-top: 5px;
-        }
-      }
-      img {
-        & + div {
-          div,
-          p {
-            margin-top: 5px;
-          }
+    }
+    img {
+      & + div {
+        div,
+        p {
+          margin-top: .05rem;
         }
       }
     }

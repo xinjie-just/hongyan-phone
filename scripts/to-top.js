@@ -9,7 +9,7 @@ $(window).scroll(function() {
         $("#toTop").fadeOut(); /* 当滑动到小于(页面被卷去的高度) 100px 时，回到顶部图标隐藏 */
     }
 });
-$("#toTop").on("click", function () {
+$("#toTop").on("tap", function () {
     $("html, body").animate({scrollTop: 0}, 300); /* 持续时间为 300ms */
     return false;
 });
