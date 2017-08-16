@@ -298,6 +298,34 @@ label.error {
   visibility: hidden; }
 
 /*===首页===*/
+/*导航*/
+.nav-wrapper {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .nav-wrapper #nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.4rem;
+    height: 100%;
+    background-color: #fff; }
+    .nav-wrapper #nav ul li a {
+      display: block;
+      padding-left: 1em;
+      height: 0.44rem;
+      border-bottom: .01px solid #ccc;
+      line-height: 0.43rem;
+      font-size: .14rem;
+      color: #333; }
+      .nav-wrapper #nav ul li a.active {
+        color: #ff6a00; }
+
 /*头部*/
 #header {
   z-index: 1;
@@ -343,32 +371,6 @@ label.error {
     #header .heading #menu i {
       color: #666;
       font-size: .2rem; }
-  #header .nav-wrapper {
-    display: none;
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); }
-  #header #nav {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.4rem;
-    height: 100%;
-    background-color: #fff; }
-    #header #nav ul li a {
-      display: block;
-      padding-left: 1em;
-      height: 0.44rem;
-      border-bottom: .01px solid #ccc;
-      line-height: 0.43rem;
-      font-size: .14rem;
-      color: #333; }
-      #header #nav ul li a.active {
-        color: #ff6a00; }
 
 main {
   margin-top: .44rem; }
