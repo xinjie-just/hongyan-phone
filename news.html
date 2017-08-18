@@ -7,6 +7,7 @@
     <title>新闻动态 | 红焱科技</title>
     <meta name="keywords" content="红焱科技,综合性金融支付解决方案">
     <meta name="description" content="红焱科技,综合性金融支付解决方案,为商户提供POS机办理、POS机维护、收银耗材批发等业务">
+    <link rel="stylesheet" href="styles/dropload.css">
     <link rel="stylesheet" href="styles/hongyan-phone.css">
     <link rel="stylesheet" href="//at.alicdn.com/t/font_383526_lgbffym9jatt9.css">
 </head>
@@ -111,6 +112,53 @@
     <script src="scripts/zepto.min.js"></script>
     <script src="scripts/fx.js"></script>
     <script src="scripts/touch.js"></script>
+    <script src="scripts/dropload.min.js"></script>
     <script src="scripts/hongyan-phone.js"></script>
+    <script>
+        $(function(){
+            $(".news-list").dropload({
+                scrollArea: window, // 滑动区域
+                //autoLoad: true, // 自动加载
+                distance: 50, // 拉动距离
+                domDown: {
+                    //上拉加载时的提示文字
+                    domClass: "dropload-down",
+                    domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
+                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                    domNoData: '<div class="dropload-noData">暂无数据</div>'
+                },
+                loadDownFn: function (me) {
+                    $.ajax({
+                        url: "这里填入要访问的地址",
+                        dataType: "JSON",
+                        success: function (data) {
+                            if (data.length == 0) {//下拉后没有数据时
+                                $(".news-list").append("<p style='font-size: 18px; padding-top: 20px; padding-bottom: 20px; text-align: center;'>亲，已无更多内容哦~</p>");
+                            }
+                            else {
+                                $.each(data, function (index, news) {
+                                    var html = "<li>" +
+                                        "<a href=\" " + news.link + " \" title=\" " + news.title + "\">" +
+                                        "<h3>" + news.title + "</h3>" +
+                                        "<time>" + news.date + "</time>" +
+                                        "<p>" + news.des + "</p>" +
+                                        "</a>" +
+                                        "</li>";
+                                    $(".news-list").append(html);
+                                });
+                                //pageNo += 1;
+                            }
+                            // 每次数据加载完，必须重置
+                            me.resetload();
+                        }, error: function () {
+                            alert("加载失败");
+                            // 即使加载出错，也得重置
+                            me.resetload();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
