@@ -106,6 +106,7 @@ main {
 #main {
   //margin-bottom: .7rem;
   padding-bottom: .7rem;
+  overflow-y: auto;
 }
 
 /*主要内容*/
@@ -760,6 +761,7 @@ article:not(.news-article) {
 }
 
 #footer {
+  z-index: 20;
   position: fixed;
   bottom: 0;
   @extend %page-width;
@@ -873,6 +875,7 @@ article.news-article {
   }
 }
 .content-wrapper {
+  margin-bottom: .3rem;
   > h2 {
     margin-top: .2rem;
     @include center-content();
@@ -1231,60 +1234,5 @@ h3.product-details {
     &:last-of-type {
       margin-right: 0;
     }
-  }
-}
-
-
-/*下拉加载更多*/
-.scroller .more{
-  height: .4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #333;
-  text-align: center;
-}
-.pull_icon{
-  width: 25px;
-  height: 25px;
-  background-image: url('../images/pull.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25px;
-  transition: all .5s;
-}
-.more span{
-  padding-left: .5rem;
-}
-
-.scroller{
-  background-color: #fff;
-}
-
-
-.more .flip{
-  transform: rotate(180deg);
-}
-.loading{
-  background-image: url('../images/loading.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 25px;
-}
-.more .loading{
-  -webkit-transform: rotate(0deg) translateZ(0);
-  -webkit-transition-duration: 0;
-  -webkit-animation-name: loading;
-  -webkit-animation-duration: 2s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-}
-
-@-webkit-keyframes loading {
-  from {
-    -webkit-transform: rotate(0deg) translateZ(0);
-  }
-  to {
-    -webkit-transform: rotate(360deg) translateZ(0);
   }
 }
