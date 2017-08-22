@@ -65,36 +65,42 @@
                         <a href="#" title="常见问题">常见问题</a>
                     </li>
                 </ul>
-                <ul class="news-list">
-                    <li>
-                        <a href="#" title="新闻标题">
-                            <h3>支付宝放弃社交，这意味着什么？</h3>
-                            <time>2017-07-10</time>
-                            <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。但是，“不做社交”不是抛弃已有的社交应用，而是不再刻意发力社交，把竞争当结果。2017年春节假期过后，蚂蚁金服召开了集团层面的…</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="新闻标题">
-                            <h3>支付宝放弃社交，这意味着什么？</h3>
-                            <time>2017-07-10</time>
-                            <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="新闻标题">
-                            <h3>支付宝放弃社交，这意味着什么？</h3>
-                            <time>2017-07-10</time>
-                            <p>2017年春节假期过后</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" title="新闻标题">
-                            <h3>支付宝放弃社交，这意味着什么？</h3>
-                            <time>2017-07-10</time>
-                            <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。但是，“不做社交”不是抛弃已有的社交应用，而是不再刻意发力社交，把竞争当结果。2017年春节假期过后，蚂蚁金服召开了集团层面的…</p>
-                        </a>
-                    </li>
-                </ul>
+
+                <div id="wrapper">
+                    <div class="scroller">
+                        <ul class="news-list">
+                            <li>
+                                <a href="#" title="新闻标题">
+                                    <h3>支付宝放弃社交，这意味着什么？</h3>
+                                    <time>2017-07-10</time>
+                                    <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。但是，“不做社交”不是抛弃已有的社交应用，而是不再刻意发力社交，把竞争当结果。2017年春节假期过后，蚂蚁金服召开了集团层面的…</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="新闻标题">
+                                    <h3>支付宝放弃社交，这意味着什么？</h3>
+                                    <time>2017-07-10</time>
+                                    <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="新闻标题">
+                                    <h3>支付宝放弃社交，这意味着什么？</h3>
+                                    <time>2017-07-10</time>
+                                    <p>2017年春节假期过后</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="新闻标题">
+                                    <h3>支付宝放弃社交，这意味着什么？</h3>
+                                    <time>2017-07-10</time>
+                                    <p>2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。2017年春节假期过后，蚂蚁金服召开了集团层面的战略会，召集了全球所有业务线负责人，以及核心管理层，确定“不做社交”。但是，“不做社交”不是抛弃已有的社交应用，而是不再刻意发力社交，把竞争当结果。2017年春节假期过后，蚂蚁金服召开了集团层面的…</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="more"><i class="pull_icon"></i><span>上拉加载...</span></div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer id="footer">
@@ -112,24 +118,41 @@
     <script src="scripts/zepto.min.js"></script>
     <script src="scripts/fx.js"></script>
     <script src="scripts/touch.js"></script>
-    <script src="scripts/dropload.min.js"></script>
+    <script src="scripts/iscroll.js"></script>
     <script src="scripts/hongyan-phone.js"></script>
     <script>
         $(function(){
-            $(".news-list").dropload({
-                scrollArea: window, // 滑动区域
-                //autoLoad: true, // 自动加载
-                distance: 50, // 拉动距离
-                domDown: {
-                    //上拉加载时的提示文字
-                    domClass: "dropload-down",
-                    domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
-                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-                    domNoData: '<div class="dropload-noData">暂无数据</div>'
+            var myscroll = new iScroll("wrapper",{
+                onScrollMove:function(){
+                    if (this.y<(this.maxScrollY)) {
+                        $('.pull_icon').addClass('flip');
+                        $('.pull_icon').removeClass('loading');
+                        $('.more span').text('释放加载...');
+                    }else{
+                        $('.pull_icon').removeClass('flip loading');
+                        $('.more span').text('上拉加载...')
+                    }
                 },
-                loadDownFn: function (me) {
+                onScrollEnd:function(){
+                    if ($('.pull_icon').hasClass('flip')) {
+                        $('.pull_icon').addClass('loading');
+                        $('.more span').text('加载中...');
+                        pullUpAction();
+                    }
+                    
+                },
+                onRefresh:function(){
+                    $('.more').removeClass('flip');
+                    $('.more span').text('上拉加载...');
+                }
+                
+            });
+        
+            function pullUpAction(){
+                setTimeout(function(){
                     $.ajax({
                         url: "这里填入要访问的地址",
+                        type:'GET',
                         dataType: "JSON",
                         success: function (data) {
                             if (data.length == 0) {//下拉后没有数据时
@@ -148,16 +171,18 @@
                                 });
                                 //pageNo += 1;
                             }
-                            // 每次数据加载完，必须重置
-                            me.resetload();
                         }, error: function () {
                             alert("加载失败");
-                            // 即使加载出错，也得重置
-                            me.resetload();
+                            $(".pull_icon").removeClass("loading");
                         }
                     });
-                }
-            });
+                    myscroll.refresh();
+                }, 1000)
+            }
+            if ($('.scroller').height()<$('#wrapper').height()) {
+                $('.more').hide();
+                myscroll.destroy();
+            }
         });
     </script>
 </body>
